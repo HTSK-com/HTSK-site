@@ -48,3 +48,8 @@ a {
 .site-header a {
     color: black; 
 }
+.site-header {
+    position: sticky;
+    top: 0;
+    height: 75px;
+}
