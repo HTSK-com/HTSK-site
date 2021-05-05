@@ -10,10 +10,10 @@ class TemplateUseTest(TestCase):
         response = self.client.get('/')
         self.assertTemplateUsed(response, 'index.html')
 
-    # def test_uses_our_works_template(self):
-    #     """тест: используется рабочий шаблон"""
-    #     response = self.client.get('our_works')
-    #     self.assertTemplateUsed(response, 'our_works.html')
+    def test_uses_our_works_template(self):
+        """тест: используется рабочий шаблон"""
+        response = self.client.get('our_works')
+        self.assertTemplateUsed(response, 'our_works.html', response.content.decode())
 
 
 class WorkModelTest(TestCase):
