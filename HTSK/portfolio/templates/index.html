@@ -23,6 +23,9 @@
             <!-- делает пространство между лого и меню-->
         </div>
         <nav class="site-navigation">
+            {% if request.user.is_staff %}
+                        <a href="admin">Админка</a>
+            {% endif %}
             <a href="our_works">Наши работы</a>
             <a href="">Наши сотрудники</a>
             <a href="">О нас</a>

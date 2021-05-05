@@ -24,5 +24,3 @@ class WorkModelTest(TestCase):
         Works.objects.create()
         save_items = Works.objects.first()
         self.assertEqual(save_items.name_project, 'work')
-
-
