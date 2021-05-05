@@ -1,8 +1,7 @@
-from django.db import models
 from django.core.files import File
+from django.db import models
 
 
-# Create your models here.
 class Works(models.Model):
     class Meta:
         verbose_name = 'Работа'
