@@ -12,7 +12,7 @@ class TemplateUseTest(TestCase):
 
     def test_uses_our_works_template(self):
         """тест: используется рабочий шаблон"""
-        response = self.client.get('our_works')
+        response = self.client.get('/our_works')
         self.assertTemplateUsed(response, 'our_works.html', response.content.decode())
 
 
