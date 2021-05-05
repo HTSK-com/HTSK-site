@@ -1,6 +1,7 @@
 * {
     background-color: whitesmoke;
 }
+
 header {
     text-align: justify;
     letter-spacing: 1px;
@@ -10,18 +11,19 @@ header {
     justify-content: flex-end;
 }
 
-
-
 a {
     text-decoration: none;
 }
+
 .site-header {
     padding: 40px 50px 26px;
 }
+
 .site-header {
     padding: 40px 20px 0;
     position: relative;
 }
+
 .site-logo {
     font-family: Karla, sans-serif;
     font-size: 25px;
@@ -32,9 +34,11 @@ a {
     width: 20%;
     margin-left: 1%;
 }
+
 .empty-div {
     width: 40%;
 }
+
 .site-navigation {
     font-family: Karla, sans-serif;
     font-size: 15px;
@@ -43,11 +47,13 @@ a {
     text-align: right;
     width: 40%;
     display: flex;
-    justify-content:space-evenly;
+    justify-content: space-evenly;
 }
+
 .site-header a {
-    color: black; 
+    color: black;
 }
+
 .site-header {
     position: sticky;
     top: 0;
