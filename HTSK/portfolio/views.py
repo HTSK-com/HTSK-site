@@ -1,4 +1,5 @@
 from django.shortcuts import render
+
 from portfolio.models import Works
 
 
@@ -13,3 +14,8 @@ def our_works_page(request):
     for i in range(len(items)):
         items[i].photo_path.name = '/'.join(items[i].photo_path.name.split('/')[1:])
     return render(request, 'our_works.html', {'items': items})
+
+
+def about_us(request):
+    """Страница о нас"""
+    return render(request, 'about_us.html')
