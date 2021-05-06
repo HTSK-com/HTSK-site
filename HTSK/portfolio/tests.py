@@ -1,5 +1,7 @@
+from django.core.files import File
 from django.test import TestCase
-from .models import Works
+
+from portfolio.models import Works
 
 
 class TemplateUseTest(TestCase):
@@ -21,6 +23,6 @@ class WorkModelTest(TestCase):
 
     def test_saving_and_retrieving_items(self):
         """тест: сохранение и получение элементов"""
-        Works.objects.create()
+        Works.objects.create(photo_path=File(open('HTSK/portfolio/static/logo.jpg', mode='rb')))
         save_items = Works.objects.first()
         self.assertEqual(save_items.name_project, 'work')

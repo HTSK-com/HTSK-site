@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Works
+from portfolio.models import Works
 
 
 def home_page(request):
