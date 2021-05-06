@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import Works
 
 
 def home_page(request):
@@ -8,4 +9,7 @@ def home_page(request):
 
 def our_works_page(request):
     """Страница с работами нашей компании"""
-    return render(request, 'our_works.html')
+    items = Works.objects.order_by('-id')
+    for i in range(len(items)):
+        items[i].photo_path.name = '/'.join(items[i].photo_path.name.split('/')[1:])
+    return render(request, 'our_works.html', {'items': items})
