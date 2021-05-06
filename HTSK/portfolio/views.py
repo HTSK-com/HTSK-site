@@ -28,3 +28,9 @@ def employees(request):
         items[i].picture_of_staff.name = '/'.join(items[i].picture_of_staff.name.split('/')[1:])
     return render(request, 'employees.html', {'items': items})
 
+
+def one_employee(request, employee_id):
+    """Страница с подробной информацией о каждом сотруднике"""
+    item = Employee.objects.get(id=employee_id)
+    item.picture_of_staff.name = '/'.join(item.picture_of_staff.name.split('/')[1:])
+    return render(request, 'employee.html', {'item': item})

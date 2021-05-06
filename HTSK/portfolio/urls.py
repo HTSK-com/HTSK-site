@@ -7,4 +7,5 @@ urlpatterns = [
     path('our_works', views.our_works_page, name='our_works'),
     path('about_us', views.about_us, name='about_us'),
     path('employees', views.employees, name='employees'),
+    path(r'employee/(.+)/$', views.one_employee, name='employee'),
 ]

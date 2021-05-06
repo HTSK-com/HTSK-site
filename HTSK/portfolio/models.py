@@ -19,8 +19,8 @@ class Works(models.Model):
 
 class Employee(models.Model):
     class Meta:
-        verbose_name = 'Раб'
-        verbose_name_plural = 'Рабы'
+        verbose_name = 'Сотрудник'
+        verbose_name_plural = 'Сотрудники'
 
     surname = models.CharField('Фамилия', max_length=40)
     name = models.CharField('Имя', max_length=40)
