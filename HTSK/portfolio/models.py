@@ -12,6 +12,7 @@ class Works(models.Model):
     photo_path = models.ImageField('Картинка проекта', default=File(open('portfolio/static/logo.jpg', mode='rb')),
                                    upload_to='portfolio/static/work')
     description = models.TextField('Описание', default='something...')
+    habr_link = models.URLField('Ссылка на Habr статью', blank=True)  # (blanc=True) == (required=False)
 
     def __str__(self):
         return self.name_project
