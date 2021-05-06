@@ -10,7 +10,7 @@ class TemplateUseTest(TestCase):
     def test_uses_home_template(self):
         """тест: используется home.html"""
         response = self.client.get('/')
-        self.assertTemplateUsed(response, 'index.html')
+        self.assertTemplateUsed(response, 'home.html')
 
     def test_uses_our_works_template(self):
         """тест: используется our_works.html"""

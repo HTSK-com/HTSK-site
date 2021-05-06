@@ -15,3 +15,22 @@ class Works(models.Model):
 
     def __str__(self):
         return self.name_project
+
+
+class Employee(models.Model):
+    class Meta:
+        verbose_name = 'Раб'
+        verbose_name_plural = 'Рабы'
+
+    surname = models.CharField('Фамилия', max_length=40)
+    name = models.CharField('Имя', max_length=40)
+    father_name = models.CharField('Отчество', max_length=43, blank=True)
+    Git_Hub_profile = models.URLField('Ссылка на репозиторий', blank=True)
+    picture_of_staff = models.ImageField('Фотография сотрудника', upload_to='portfolio/static/employee')
+    position = models.CharField('Должность', max_length=100)
+    experience = models.TextField('Опыт и стаж работы')
+    about_myself = models.TextField('О себе', blank=True)
+    contact_information = models.TextField('Контактные данные', blank=True, default='htsk.comp@gmail.com')
+
+    def __str__(self):
+        return f'{self.surname} {self.name} {self.father_name}'

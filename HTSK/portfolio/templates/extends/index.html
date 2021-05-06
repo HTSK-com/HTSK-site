@@ -24,13 +24,18 @@
     </div>
     <nav class="site-navigation">
         {% if request.user.is_staff %}
-        <a href="admin">Админка</a>
+            <a href="admin">Админка</a>
         {% endif %}
         <a href="our_works">Наши работы</a>
-        <a href="">Наши сотрудники</a>
+        <a href="employees">Наши сотрудники</a>
         <a href="about_us">О нас</a>
         <a href="">Сделать заказ</a>
     </nav>
+
 </header>
+    {% block content %}
+    {% endblock %}
+<footer>
+</footer>
 </body>
 </html>

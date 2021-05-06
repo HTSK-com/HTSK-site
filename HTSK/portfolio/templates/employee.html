@@ -1,0 +1,14 @@
+{% extends 'extends/index.html' %}
+{% block content %}
+    <div>
+        {% for item in items %}
+            <div>
+                <p>{{ item }}</p>
+                <img src="{{ picture_of_staff }}">
+                <p>{{ item.position }}</p>
+                <p>{{ item.description }}</p>
+                <p>{{ item.habr_link }}</p>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

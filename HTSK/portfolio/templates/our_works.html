@@ -1,21 +1,14 @@
-<!DOCTYPE html>
-{% load static %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<div>
-    {%for item in items%}
-    <div><p>{{item.name_project}}</p>
-        <p>{{item.git_link}}</p>
-<!--        <p>{{item.photo_path}}</p>-->
-        <img src="{{item.photo_path}}">
-        <p>{{item.description}}</p>
-        <p>{{item.habr_link}}</p>
-    </div>
-    {%endfor%}
-</div>
-</body>
-</html>
+{% extends 'extends/index.html' %}
+{% block content %}
+{#    <div>#}
+{#        {% for item in items %}#}
+{#            <div>#}
+{#                <p>{{ item.name_project }}</p>#}
+{#                <p>{{ item.git_link }}</p>#}
+{#                <img src="{{ item.photo_path }}">#}
+{#                <p>{{ item.description }}</p>#}
+{#                <p>{{ item.habr_link }}</p>#}
+{#            </div>#}
+{#        {% endfor %}#}
+{#    </div>#}
+{% endblock %}
