@@ -1,7 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 from portfolio.models import Works, Employee
-
+from .froms import OrderForm
 
 def home_page(request):
     """Домашняя страница"""
@@ -34,3 +34,17 @@ def one_employee(request, employee_id):
     item = Employee.objects.get(id=employee_id)
     item.picture_of_staff.name = '/'.join(item.picture_of_staff.name.split('/')[1:])
     return render(request, 'employee.html', {'item': item})
+
+
+def make_an_order(request):
+    error = ''
+    if request.method == 'POST':
+        form = OrderForm(request.POST)
+        print(form)
+        if form.is_valid():
+            form.save()
+            return redirect('home')
+        else:
+            error = 'Неверная форма'
+    form = OrderForm()
+    return render(request, 'make_an_order.html', {'form': form, 'error': error})
