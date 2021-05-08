@@ -1,0 +1,19 @@
+{% extends 'extends/index.html' %}
+{% block title %} Сделать заказ {% endblock %}
+{% block content %}
+<div>
+    <h1>Заказать наши услуги</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.surname }}<br>
+        {{ form.name }}<br>
+        {{ form.email }}<br>
+        {{ form.description }}<br>
+        {{ form.files }}<br>
+        <button type="submit">Сделать заказ</button>
+        {% if error %}
+        <span>{{ error }}</span>
+        {% endif %}
+    </form>
+</div>
+{% endblock %}

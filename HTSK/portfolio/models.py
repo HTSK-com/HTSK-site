@@ -34,3 +34,18 @@ class Employee(models.Model):
 
     def __str__(self):
         return f'{self.surname} {self.name} {self.father_name}'
+
+
+class Order(models.Model):
+    class Meta:
+        verbose_name = 'Заказ'
+        verbose_name_plural = 'Заказы'
+
+    surname = models.CharField('Фамилия', max_length=40)
+    name = models.CharField('Имя', max_length=40)
+    description = models.TextField('Описание', default='')
+    email = models.EmailField('Email')
+    files = models.FileField('Файлы', upload_to='portfolio/static/orders', blank=True)
+
+    def __str__(self):
+        return f'{self.surname} {self.name}'
