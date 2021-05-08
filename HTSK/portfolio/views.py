@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect
 
 from portfolio.models import Works, Employee
-from .froms import OrderForm
+from .forms import OrderForm
+
 
 def home_page(request):
     """Домашняя страница"""
@@ -39,8 +40,7 @@ def one_employee(request, employee_id):
 def make_an_order(request):
     error = ''
     if request.method == 'POST':
-        form = OrderForm(request.POST)
-        print(form)
+        form = OrderForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             return redirect('home')

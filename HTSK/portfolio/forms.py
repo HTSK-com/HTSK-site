@@ -5,6 +5,7 @@ from django.forms import ModelForm, TextInput, FileInput, EmailInput, Textarea
 class OrderForm(ModelForm):
     class Meta:
         model = Order
+
         fields = ['surname', 'name', 'description', 'email', 'files']
 
         widgets = {
