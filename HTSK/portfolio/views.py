@@ -2,6 +2,11 @@ from django.shortcuts import render, redirect
 
 from portfolio.models import Works, Employee
 from .forms import OrderForm
+from .TG_bot import TOKEN
+import telebot
+
+
+bot = telebot.TeleBot(TOKEN)
 
 
 def home_page(request):
@@ -43,6 +48,12 @@ def make_an_order(request):
         form = OrderForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
+            bot.send_message(679493449, f'Заказ от:{form.cleaned_data["name"]} {form.cleaned_data["surname"]} \n'
+                                        f'Почта заказчика:  {form.cleaned_data["email"]}\n'
+                                        f'Описание заказа: \n {form.cleaned_data["description"]}')
+            bot.send_message(441567171, f'Заказ от:{form.cleaned_data["name"]} {form.cleaned_data["surname"]} \n'
+                                        f'Почта заказчика:  {form.cleaned_data["email"]}\n'
+                                        f'Описание заказа: \n {form.cleaned_data["description"]}')
             return redirect('home')
         else:
             error = 'Неверная форма'
